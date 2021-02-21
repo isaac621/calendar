@@ -1,0 +1,142 @@
+:root{
+    --primary: #053f5e;
+    --primary-dark: #022C43;
+    --primary-light: #115173;
+    --secondary: #ffd700;
+    --white: rgb(255, 237, 214);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-dark);
+}
+
+.container{
+    width: 30rem;
+    height: calc(7.5rem + 30rem / 7 *6);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 5px black;
+    overflow: hidden;
+}
+
+.calendar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.months{
+    width: 100%;
+    height: 5rem;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.months i{
+    cursor: pointer;
+    margin: 3rem;
+}
+
+
+.display{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.384);
+    
+}
+
+.month{
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2rem;
+    
+}
+
+.fulldate{
+    line-height: 1rem;
+}
+
+.weekdays{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.weekday{
+    flex: 1;
+    text-align: center;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    width: 100%;
+    color: white;
+}
+.days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    flex: 1;
+    background-color: var(--white);
+}
+
+.day{
+    height: calc(30rem/ 7);
+    width: calc(30rem / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1px rgb(155, 155, 155);
+    border-right: solid 1px rgb(155, 155, 155);
+    transition: 0.5s;
+    
+}
+
+.active{
+    background-color: var(--primary-dark);
+    color: white;
+    box-shadow: 0 0 8px black;
+    font-size: 1.5rem;
+}
+
+
+.days div:not(.today):hover{
+    background-color: var(--primary-light);
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 0 8px black;
+}
+
+.day.today{
+    background-color: var(--primary-dark);
+    color: white;
+    cursor: pointer;
+}
+
+.prevday,
+.nextday{
+    color: grey;
+
+}
